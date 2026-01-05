@@ -1,3 +1,10 @@
+<%-- 
+    Document   : index
+    Created on : Jan 5, 2026, 11:19:45 AM
+    Author     : Dang Khoa
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="vi">
     <head>
