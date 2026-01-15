@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.UserDAO;
 import model.UserDTO;
+
 /**
  *
  * @author Dang Khoa
@@ -36,24 +37,24 @@ public class MainController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet MainController</title>");            
+            out.println("<title>Servlet MainController</title>");
             out.println("</head>");
             out.println("<body>");
             String txtUsername = request.getParameter("txtUsername");
             String txtPassword = request.getParameter("txtPassword");
-            String url="";
+            String url = "";
             UserDAO udao = new UserDAO();
-            UserDTO user= udao.login(txtUsername, txtPassword);
-            if(user!=null){
+            UserDTO user = udao.login(txtUsername, txtPassword);
+            if (user != null) {
                 url = "a.jsp";
                 request.setAttribute("user", user);
-            }else{
+            } else {
                 url = "login.jsp";
                 request.setAttribute("message", "Life is not dom dom yes yes try again with correct username or password!!!");
             }
             //chuyen trang
-            RequestDispatcher rd =request.getRequestDispatcher(url);
-            rd.forward(request, response);  
+            RequestDispatcher rd = request.getRequestDispatcher(url);
+            rd.forward(request, response);
             out.println("</body>");
             out.println("</html>");
         }
